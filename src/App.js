@@ -1,18 +1,26 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import image from './images/cover.jpeg'
 import './App.css';
+import Skillsets from './components/Skills'
+import { Skillset } from './info/Skillset';
+import * as ReactBootstrap from 'react-bootstrap'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <img src={image} className="Image-cover" alt="logo" />
+          <h1 className="App-title">Yu Lei's Online Portfolio</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <ReactBootstrap.Grid>
+          <ReactBootstrap.Row className="show-grid">
+            <ReactBootstrap.Col xs={6}>
+              <Skillsets info={Skillset}/>  
+            </ReactBootstrap.Col>
+          </ReactBootstrap.Row>
+        </ReactBootstrap.Grid>
       </div>
     );
   }
